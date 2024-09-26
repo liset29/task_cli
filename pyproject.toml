@@ -1,0 +1,25 @@
+
+[tool.poetry]
+name = "task-cli"
+version = "0.1.0"
+description = ""
+authors = ["liset29 <79374931315t@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.10.5"
+pytest = "^8.3.3"
+aioresponses = "^0.7.6"
+validators = "^0.34.0"
+pytest-mock = "^3.14.0"
+coverage = "^7.6.1"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.24.0"
+coverage = "^7.6.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
