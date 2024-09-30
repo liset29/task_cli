@@ -3,17 +3,18 @@ import json
 import sys
 import aiohttp
 import validators
+import logging
+from const import HTTP_METHODS as http_methods
 
 
 
-http_methods = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PATCH']
 
 async def check_method(session,url,method):
     try:
         async with session.request(method, url, timeout=10) as response:
             return (method, response.status)
-    except Exception:
-        pass
+    except Exception as e:
+            logging.error(f"Ошибка: {e}")
     return (method, None)
 
 async def check_url_method(session, url):

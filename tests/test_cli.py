@@ -1,9 +1,8 @@
 import pytest
-from aioresponses import aioresponses
 import aiohttp
 from main import check_method, check_url_method, main
-
-http_methods = ['GET', 'HEAD', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'TRACE', 'PATCH']
+from const import HTTP_METHODS as http_methods
+from aioresponses import aioresponses
 
 
 @pytest.mark.asyncio
